@@ -1,0 +1,127 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   min-height: 100vh;
+   background: rgb(88, 88, 88);
+   overflow: hidden;
+}
+.clock {
+   position: relative;
+   width: 500px;
+   height: 500px;
+   border-radius: 50%;
+   border: 10px solid #000;
+   background: linear-gradient(rgb(104, 104, 248), rgb(92, 252, 92));
+   box-shadow: 10px 20px 25px 20px rgba(0, 0, 0, 0.5);
+   animation: shadow 4s ease-in-out infinite;
+   @keyframes shadow {
+      0%,
+      100% {
+         box-shadow: 15px 25px 20px 20px rgba(0, 0, 0, 0.5);
+         transform: scale(1);
+      }
+      50% {
+         box-shadow: 10px 20px 30px 10px rgba(0, 0, 0, 0.5);
+         transform: scale(1.05);
+      }
+   }
+   #time {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, 0);
+      font-size: 40px;
+   }
+   #centr {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border-radius: 50%;
+      border: 2px solid #000;
+      z-index: 10;
+   }
+   .hCircle {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #000;
+      background: rgb(255, 218, 55);
+      font-size: 30px;
+   }
+   .hour,
+   .min,
+   .sec {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+   }
+   .hour,
+   .hr {
+      width: 280px;
+      height: 280px;
+   }
+   .min,
+   .mn {
+      width: 330px;
+      height: 330px;
+   }
+   .sec,
+   .sc {
+      width: 380px;
+      height: 380px;
+   }
+
+   .hr,
+   .mn,
+   .sc {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      border-radius: 50%;
+   }
+   .hr::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 160px;
+      background: #ff105e;
+      border-radius: 6px;
+      border: 2px solid #000;
+   }
+   .mn::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 190px;
+      background: #fff;
+      border-radius: 6px;
+      border: 2px solid #000;
+   }
+   .sc::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 230px;
+      background: #fff;
+      border-radius: 6px;
+      z-index: 20;
+      border: 2px solid #000;
+   }
+}
